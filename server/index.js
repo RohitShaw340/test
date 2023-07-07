@@ -12,7 +12,11 @@ const port = process.env.PORT || 3001;
 //   database: "epiz_33284042_expences",
 // });
 
-app.use(cors());
+app.use(cors({
+    origin: "https://door-step.vercel.app/",
+    methods: ["POST", "GET"],
+    credentials: true,
+  }));
 app.use(express.json());
 
 app.get("/", (req, res) => {
